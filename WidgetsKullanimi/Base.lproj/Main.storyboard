@@ -58,28 +58,61 @@
                                     <constraint firstAttribute="height" constant="48" id="Tk2-6i-tUE"/>
                                 </constraints>
                             </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xf7-fU-2jZ">
+                                <rect key="frame" x="182.5" y="300" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchDegisim:" destination="BYZ-38-t0r" eventType="valueChanged" id="Cpu-yf-ggv"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq2-74-v5i">
+                                <rect key="frame" x="170" y="795" width="83" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Göster"/>
+                                <connections>
+                                    <action selector="buttonGöster:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c3a-LO-guW"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EDk-69-uwt">
+                                <rect key="frame" x="92" y="347" width="230" height="32"/>
+                                <segments>
+                                    <segment title="Yemekler"/>
+                                    <segment title="Tatlılar"/>
+                                    <segment title="İçecekler"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmenteDegisim:" destination="BYZ-38-t0r" eventType="valueChanged" id="zwp-NV-kq9"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ydu-0a-ek6" firstAttribute="top" secondItem="lRg-8I-y32" secondAttribute="bottom" constant="16" id="6EW-0O-iwC"/>
                             <constraint firstItem="ydu-0a-ek6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7zr-0M-rtr"/>
+                            <constraint firstItem="Xf7-fU-2jZ" firstAttribute="top" secondItem="nEE-ad-YNm" secondAttribute="bottom" constant="16" id="KKl-9J-4V1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lRg-8I-y32" secondAttribute="trailing" constant="50" id="Kxc-VD-Vp6"/>
+                            <constraint firstItem="Oq2-74-v5i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NQJ-0b-TAR"/>
                             <constraint firstItem="lRg-8I-y32" firstAttribute="top" secondItem="Ouk-lz-O9P" secondAttribute="bottom" constant="16" id="NkX-yO-2Kh"/>
                             <constraint firstItem="lRg-8I-y32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Nz3-XC-p7v"/>
                             <constraint firstItem="hyj-Dg-co4" firstAttribute="top" secondItem="lRg-8I-y32" secondAttribute="bottom" constant="100" id="U9G-e7-QMK"/>
                             <constraint firstItem="aZH-B4-a2M" firstAttribute="top" secondItem="lRg-8I-y32" secondAttribute="bottom" constant="100" id="UkJ-aV-QlB"/>
                             <constraint firstItem="Ouk-lz-O9P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="V0Q-wM-oed"/>
+                            <constraint firstItem="Xf7-fU-2jZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cd7-Sd-HjT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aZH-B4-a2M" secondAttribute="trailing" constant="32" id="cuF-6f-fkP"/>
                             <constraint firstItem="Ouk-lz-O9P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dmD-ZE-5rA"/>
                             <constraint firstItem="hyj-Dg-co4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="fvr-zx-uFP"/>
                             <constraint firstItem="nEE-ad-YNm" firstAttribute="top" secondItem="ydu-0a-ek6" secondAttribute="bottom" constant="50" id="m6c-CH-0sP"/>
+                            <constraint firstItem="EDk-69-uwt" firstAttribute="top" secondItem="Xf7-fU-2jZ" secondAttribute="bottom" constant="16" id="mQ8-8W-AHa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oq2-74-v5i" secondAttribute="bottom" constant="32" id="sOj-us-wWK"/>
+                            <constraint firstItem="EDk-69-uwt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="to2-I3-uXf"/>
                             <constraint firstItem="nEE-ad-YNm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wjs-sc-g34"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="nEE-ad-YNm" id="pXL-IH-Y4q"/>
                         <outlet property="labelSonuc" destination="Ouk-lz-O9P" id="z3q-Ip-63o"/>
+                        <outlet property="mSwitch" destination="Xf7-fU-2jZ" id="935-xl-nKd"/>
+                        <outlet property="segmentedControl" destination="EDk-69-uwt" id="XzF-6g-3ZA"/>
                         <outlet property="textFieldGirdi" destination="lRg-8I-y32" id="3g3-nN-IIy"/>
                     </connections>
                 </viewController>
