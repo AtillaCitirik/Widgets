@@ -14,11 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var mSwitch: UISwitch!
+    @IBOutlet weak var labelSlider: UILabel!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var labelStepper: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var actionIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        labelSlider.text = String(Int(slider.value))
+        labelStepper.text = String(Int(stepper.value))
+        actionIndicator.isHidden = true
+
     }
 
     @IBAction func buttonYap(_ sender: Any) {
@@ -52,7 +61,24 @@ class ViewController: UIViewController {
         let secilenKategori = sender.titleForSegment(at: secilenIndex)
         print("secim \(secilenKategori!)")
         
-        
+    }
+    
+    @IBAction func sliderDegisim(_ sender: UISlider) {
+        labelSlider.text = String(Int(sender.value))
+    }
+    
+    @IBAction func stepperDegisim(_ sender: UIStepper) {
+        labelStepper.text = String(Int(sender.value))
+    }
+    
+    @IBAction func buttonBasla(_ sender: Any) {
+        actionIndicator.isHidden = false
+        actionIndicator.startAnimating()
+    }
+    
+    @IBAction func buttondur(_ sender: Any) {
+        actionIndicator.isHidden = true
+        actionIndicator.stopAnimating()
     }
     
 }
